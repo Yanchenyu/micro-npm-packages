@@ -18,3 +18,5 @@ function quickSort(arr) {
     }
     return [].concat(quickSort(leftArr), [q], quickSort(rightArr))
 }
+
+// 快速排序的时间要比冒泡排序执行时间慢了10倍左右

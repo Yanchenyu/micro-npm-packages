@@ -11,7 +11,7 @@ function mostfrequently(string) {
     string = string.split('');
     string.forEach(item => {
         if (!obj[item]) {
-            obj[item] = 1
+            obj[item] = 1;      // 这里初始值一定要是1，除非上面判断改成obj[item] === undefined
         } else {
             obj[item] += 1;
         }
