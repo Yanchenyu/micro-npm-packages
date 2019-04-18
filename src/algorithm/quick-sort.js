@@ -2,6 +2,9 @@
  * @description 快速排序
  */
 
+// 思路：取一个值（默认第一个），然后将后面的所有值与之对比，分为两个数组，小于等于，和大于，
+// 然后利用递归，再对这两个数组再进行比较，再拆分两个数组，以此类推
+
 function quickSort(arr) {
 
     if (arr.length <= 1) return arr;
