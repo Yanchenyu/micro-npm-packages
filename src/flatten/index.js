@@ -14,7 +14,7 @@ var arr = [1,2,[3,4,[5,[6]]],7,8,[9,10,[11]]];
 
 var dataType = require('../type/index.js');
 
-function flattenDeep(arr) {
+function flattenDeep1(arr) {
     if (!dataType.isArray(arr)) return
     var newArr = [];
     for (var i = 0,l = arr.length; i < l; i++) {
@@ -27,6 +27,25 @@ function flattenDeep(arr) {
     return newArr
 }
 
-console.log(flattenDeep(arr))
+// console.log(flattenDeep1(arr))
 
-// 实现二：
+// 实现二：reduce实现递归
+function flattenDeep2(arr) {
+    if (!dataType.isArray(arr)) return
+    return arr.reduce((prev, next) => {
+        return prev.concat(dataType.isArray(next) ? flattenDeep2(next) : next)
+    }, [])
+}
+
+// console.log(flattenDeep2(arr))
+
+// 实现三：利用es6的扩展运算符，每次执行扩展运算符可以扁平化一层
+function flattenDeep3(arr) {
+    if (!dataType.isArray(arr)) return
+    while (arr.some(item => dataType.isArray(item))) {
+        arr = [].concat(...arr)
+    }
+    return arr
+}
+
+console.log(flattenDeep3(arr))
