@@ -43,6 +43,7 @@ function flattenDeep2(arr) {
 function flattenDeep3(arr) {
     if (!dataType.isArray(arr)) return
     while (arr.some(item => dataType.isArray(item))) {
+        // 每进一次while，arr就扁平一层
         arr = [].concat(...arr)
     }
     return arr
