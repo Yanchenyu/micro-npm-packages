@@ -11,9 +11,13 @@ function sort(arr) {
         for (let j = i + 1; j < l; j++) {
             // 二轮循环因为是依次取每个位置的值和当前一轮所取的值作对比，所以要取到最后一个值
             if (arr[i] > arr[j]) {
-                let item = arr[i];
-                arr[i] = arr[j];
-                arr[j] = item;
+                // es5写法
+                // let item = arr[i];
+                // arr[i] = arr[j];
+                // arr[j] = item;
+
+                // es6写法
+                [arr[i], arr[j]] = [arr[j], arr[i]];
             }
         }
     }

@@ -30,3 +30,13 @@ var dataType = {
 };
 
 module.exports = dataType;
+
+
+async function waitTime() {
+    await new Promise(r => setTimeout(r, 1000));
+    console.log('time in!!');
+}
+
+console.log('time start');
+waitTime()
+console.log('time end');
