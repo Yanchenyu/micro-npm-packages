@@ -41,7 +41,6 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
         quickSort(arr, partitionIndex + 1, right);
 
     }
-
     return arr;
 }
 
@@ -50,7 +49,6 @@ function partition(arr, left, right) {
     let index = pivot + 1;  // index是要把基准数换到中间的位置
 
     for (let i = index; i <= right; i++) {
-
         // 从基准数后一位开始一直到最右侧
 
         if (arr[i] < arr[pivot]) {
@@ -59,7 +57,6 @@ function partition(arr, left, right) {
             // 同时基准数的交换位置后移
             index++;
         }
-
     }
 
     // 此时，遍历结束，从pivot的初始位置，到现在的index-1，这中间的数都是小于基准数的
